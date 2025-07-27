@@ -37,6 +37,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # my apps
+    # 'school.apps.SchoolConfig'
+    'school'
+
+    # modules(third party apps)
+    # 'django_cleanup.apps.CleanupConfig',
 ]
 
 MIDDLEWARE = [

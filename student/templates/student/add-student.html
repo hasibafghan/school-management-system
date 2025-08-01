@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+  Add Student
+{% endblock %}
+
+{% block content %}
+  <div>
+    <div class="page-wrapper">
+      <div class="content container-fluid">
+        <div class="page-header">
+          <div class="row align-items-center">
+            <div class="col">
+              <h3 class="page-title">Add Students</h3>
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item">
+                  <a href="students.html">Students</a>
+                </li>
+                <li class="breadcrumb-item active">Add Students</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="card">
+              <div class="card-body">
+                <form method="POST" action="" enctype="multipart/form-data">
+                  {% csrf_token %}
+                  <div class="row">
+                    <div class="col-12 col-md-6">
+                      <h4 class="card-title">Student Information</h4>
+                      {{ student_form|crispy }}
+                    </div>
+                    <div class="col-12 col-md-6">
+                      <h4 class="card-title">Parent Information</h4>
+                      {{ parent_form|crispy }}
+                    </div>
+                    <div class="col-12">
+                      <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

@@ -40,11 +40,20 @@ INSTALLED_APPS = [
 
     # my apps
     # 'school.apps.SchoolConfig'
-    'school'
+    'school',
+    'student.apps.StudentConfig',
+    # 'student'
 
     # modules(third party apps)
-    # 'django_cleanup.apps.CleanupConfig',
+    'django_cleanup.apps.CleanupConfig',
+    "widget_tweaks",
+    "crispy_forms",
+    "crispy_bootstrap5",
 ]
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

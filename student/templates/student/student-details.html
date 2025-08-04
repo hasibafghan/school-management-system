@@ -24,20 +24,24 @@
               <div class="about-info">
                 <h4>About Me</h4>
                 <div class="media mt-3">
-                  <img src="assets/img/user.jpg" class="mr-3" alt="..." />
+                  {% if student_detail.student_image and student_detail.student_image.url %}
+                    <img src="{{ student_detail.student_image.url }}" class="mr-3" alt="Student Image" />
+                  {% else %}
+                    <img src="{% static 'assets/img/default.png' %}" class="mr-3" alt="No Image" />
+                  {% endif %}
                   <div class="media-body">
                     <ul>
                       <li>
                         <span class="title-span">Full Name :</span>
-                        <span class="info-span">Daisy Parks</span>
+                        <span class="info-span">{{ student_detail.first_name }} {{ student_detail.last_name }}</span>
                       </li>
                       <li>
-                        <span class="title-span">Department :</span>
-                        <span class="info-span">Computer Science</span>
+                        <span class="title-span">Class:</span>
+                        <span class="info-span">{{ student_detail.student_class }}</span>
                       </li>
                       <li>
                         <span class="title-span">Mobile :</span>
-                        <span class="info-span">+91 89657 48512</span>
+                        <span class="info-span">{{ student_detail.mobile_number }}</span>
                       </li>
                       <li>
                         <span class="title-span">Email :</span>
@@ -45,11 +49,11 @@
                       </li>
                       <li>
                         <span class="title-span">Gender :</span>
-                        <span class="info-span">Male</span>
+                        <span class="info-span">{{ student_detail.gender }}</span>
                       </li>
                       <li>
                         <span class="title-span">DOB :</span>
-                        <span class="info-span">22 Apr 1995</span>
+                        <span class="info-span">{{ student_detail.date_of_birth }}</span>
                       </li>
                     </ul>
                   </div>
@@ -182,15 +186,15 @@
       </div>
     </div>
 
-    <script data-cfasync="false" src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script data-cfasync="false" src="{% static '../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery-3.6.0.min.js' %}"></script>
 
-    <script src="assets/js/popper.min.js"></script>
-    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="{% static 'assets/js/popper.min.js' %}"></script>
+    <script src="{% static 'assets/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
 
-    <script src="assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="{% static 'assets/plugins/slimscroll/jquery.slimscroll.min.js' %}"></script>
 
-    <script src="assets/js/script.js"></script>
+    <script src="{% static 'assets/js/script.js' %}"></script>
 
     <!-- Mirrored from preschool.dreamguystech.com/html-template/student-details.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 28 Oct 2021 11:11:50 GMT -->
   </div>

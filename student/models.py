@@ -3,6 +3,7 @@ from django.utils.text import slugify
 from django.utils import timezone
 
 
+
 class Parent(models.Model):
     father_name = models.CharField(max_length=100)
     father_occupation = models.CharField(max_length=100)
@@ -41,14 +42,14 @@ class Student(models.Model):
     joining_date = models.DateTimeField(default=timezone.now, blank=True, null=True)
     mobile_number = models.CharField(max_length=15)
     student_image = models.ImageField(upload_to='student/', blank=True, null=True)
-    parent = models.ForeignKey(Parent,on_delete=models.CASCADE, related_name='students', blank=True, null=True)
-    admission_number = models.CharField(max_length=20, unique=True)
-    slug = models.SlugField(max_length=255, blank=True, null=True)
+    parent = models.ForeignKey(Parent,on_delete=models.CASCADE, related_name='parent', blank=True, null=True)
+    admission_number = models.CharField(max_length=20 ,unique=True)
+    slug = models.SlugField(unique=True , max_length=50, blank=True, null=True)
+
 
     def save(self, *args, **kwargs):
-        if not self.slug:
-            self.slug = slugify(f'{self.first_name}-{self.last_name}-{self.admission_number}')
+    # If slug is empty or admission_number/first_name/last_name changed, regenerate it
+        self.slug = slugify(f'{self.student_id}-{self.first_name}-{self.last_name}-{self.admission_number}')
         super().save(*args, **kwargs)
 
-    def __str__(self):
-        return f'{self.first_name} {self.last_name} ({self.admission_number})'
+    

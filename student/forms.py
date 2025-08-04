@@ -12,7 +12,7 @@ class AddStudentForm(forms.ModelForm):
                 'type': 'datetime-local',  # uses HTML5 datetime picker
             }),
         }
-        exclude = ['parent']  # Exclude slug as it is auto-generated
+        exclude = ['parent' , 'slug' ]  # Exclude slug as it is auto-generated
 
 
 class AddParentForm(forms.ModelForm):

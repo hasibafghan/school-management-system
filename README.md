@@ -67,7 +67,7 @@ A comprehensive Django-based School Management System designed to streamline adm
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/school-management-system.git
+   git clone https://github.com/hasibafghan/school-management-system.git
    cd school-management-system
    ```
 
@@ -177,8 +177,8 @@ This project is open source and available under the [MIT License](LICENSE).
 ## 🙋‍♂️ Support
 
 For questions, suggestions, or contributions:
-- Open an [issue](https://github.com/yourusername/school-management-system/issues)
-- Create a [discussion](https://github.com/yourusername/school-management-system/discussions)
+- Open an [issue](https://github.com/hasibafghan/school-management-system/issues)
+- Create a [discussion](https://github.com/hasibafghan/school-management-system/discussions)
 - Submit a pull request
 
 ---

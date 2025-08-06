@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     # 'school.apps.SchoolConfig'
     'school',
     'student.apps.StudentConfig',
+    'accounts_auth.apps.AccountsAuthConfig',
     # 'student'
 
     # modules(third party apps)
@@ -146,3 +147,11 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# Authentication settings
+# LOGIN_URL = 'login''
+# LOGIN_REDIRECT_URL = ''
+# LOGOUT_REDIRECT_URL = ''
+
+# AUTH_USER_MODEL = 'accounts_auth.CustomUser'

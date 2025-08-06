@@ -4,9 +4,10 @@ from django.contrib import messages
 from django.shortcuts import redirect
 from .models import Student , Parent
 from .forms import AddStudentForm , AddParentForm
+from django.contrib.auth.decorators import login_required
 
 
-
+@login_required
 def add_student_with_parent(request):
     if request.method == 'POST':
         student_form = AddStudentForm(request.POST, request.FILES)
@@ -31,17 +32,17 @@ def add_student_with_parent(request):
     })
 
 
-
+@login_required
 def student_list(request):
     student_list = Student.objects.all()
     return render(request , 'student/students.html', {'student_list' : student_list})
 
-
+@login_required
 def student_detail(request, slug):
     student_detail = get_object_or_404(Student, slug=slug)
     return render(request, 'student/student-details.html', {'student_detail': student_detail})
 
-
+@login_required
 def delete_student(request , slug):
     if request.method == 'POST':
         student = get_object_or_404(Student , slug = slug)
@@ -83,7 +84,7 @@ def delete_student(request , slug):
 #             'student': student,
 #         })
 
-
+@login_required
 def edit_student(request, slug):
     student = get_object_or_404(Student, slug=slug)
 

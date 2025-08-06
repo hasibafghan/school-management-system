@@ -1,12 +1,13 @@
 # 🏫 School Management System
 
 
-![Project image](static/assets/project_image.png)
 
 > ⚠️ **Project Status: INCOMPLETE**  
 > This project is currently under development and  **not yet complete**. 
 >just **student section & authentication(account) section is done!** 
 > Feel free to fork, contribute, or add your own features according to your specific needs!
+
+![Project image](static/assets/project_image.png)
 
 ---
 
